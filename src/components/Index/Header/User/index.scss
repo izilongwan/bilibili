@@ -1,0 +1,15 @@
+.user {
+  float: right;
+
+  .icon {
+    border: 1px solid;
+    border-radius: 50%;
+    color: #999;
+    font-size: 20px;
+    overflow: hidden;
+  }
+
+  .nickname {
+    margin: 0 5px 0 2px;
+  }
+}
