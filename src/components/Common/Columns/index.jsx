@@ -1,11 +1,11 @@
 import { Tag } from 'antd';
-import { BILI } from 'config';
+import { BILI } from '~/config';
 import React from 'react';
 import ColumnSearchProps from '../ColumnSearchProps';
 import ColumnStatus from '../ColumnStatus';
 import SelectField from '../Select';
 import LazyLoad from 'react-lazy-load';
-import lazyImg from 'images/lazy.png';
+import lazyImg from '~/assets/images/lazy.png';
 
 const { FIELD } = BILI;
 

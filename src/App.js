@@ -5,71 +5,71 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import loading from 'components/Common/Loading';
+import loading from '~/components/Common/Loading';
 
 const Login = loadable({
-  loader: () => import('pages/Login'),
+  loader: () => import('~/pages/Login'),
   loading
 });
 
 const Index = loadable({
-  loader: () => import('pages/Index'),
+  loader: () => import('~/pages/Index'),
   loading
 });
 
 
 const Carousel = loadable({
-  loader: () => import('pages/Index/Carousel'),
+  loader: () => import('~/pages/Index/Carousel'),
   loading
 });
 
 const Promote = loadable({
-  loader: () => import('pages/Index/Promote'),
+  loader: () => import('~/pages/Index/Promote'),
   loading
 });
 
 const ESports = loadable({
-  loader: () => import('pages/Index/ESports'),
+  loader: () => import('~/pages/Index/ESports'),
   loading
 });
 
 const Live = loadable({
-  loader: () => import('pages/Index/Live'),
+  loader: () => import('~/pages/Index/Live'),
   loading
 });
 
 const Full = loadable({
-  loader: () => import('pages/Index/Full'),
+  loader: () => import('~/pages/Index/Full'),
   loading
 });
 
 const Bangumi = loadable({
-  loader: () => import('pages/Index/Bangumi'),
+  loader: () => import('~/pages/Index/Bangumi'),
   loading
 });
 
 const Cinema = loadable({
-  loader: () => import('pages/Index/Cinema'),
+  loader: () => import('~/pages/Index/Cinema'),
   loading
 });
 
 const Origin = loadable({
-  loader: () => import('pages/Index/Origin'),
+  loader: () => import('~/pages/Index/Origin'),
   loading
 });
 
 const Rookie = loadable({
-  loader: () => import('pages/Index/Rookie'),
+  loader: () => import('~/pages/Index/Rookie'),
   loading
 });
 
 const Crawler = loadable({
-  loader: () => import('pages/Index/Crawler'),
+  loader: () => import('~/pages/Index/Crawler'),
   loading
 });
 
 const NotFound = loadable({
-  loader: () => import('pages/Index/404'),
+  loader: () => import('~/pages/Index/404'),
   loading
 });
 

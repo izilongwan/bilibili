@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import context from 'components/Index/Context'
+import context from '~/components/Index/Context'
 
 let ref = null;
 

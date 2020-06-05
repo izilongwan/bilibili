@@ -2,9 +2,9 @@ import React from 'react';
 import { Menu, message, Popconfirm } from 'antd';
 import { LogoutOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
-import { logout } from 'api/user'
-import { MESSAGE } from 'config'
-import { asyncFunc } from 'utils/tools'
+import { logout } from '~/api/user'
+import { MESSAGE } from '~/config'
+import { asyncFunc } from '~/utils/tools'
 
 const { SERVER_ERROR } = MESSAGE;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
-import lazyImg from 'images/lazy.png';
+import lazyImg from '~/assets/images/lazy.png';
 import ColumnStatus from '~/components/Common/ColumnStatus';
 import ColumnSearchProps from '~/components/Common/ColumnSearchProps';
 

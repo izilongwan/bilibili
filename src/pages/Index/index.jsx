@@ -1,17 +1,17 @@
 import { Layout, message } from 'antd';
-import * as APICrawl from 'api/crawl';
-import * as APIIndex from 'api/index';
-import * as APIUser from 'api/user';
-import Context from 'components/Index/Context';
-import LayHeader from 'components/Index/Header';
-import LaySidebar from 'components/Index/Sidebar';
-import Title from 'components/Index/Title';
-import { API_NAME, BILI, MESSAGE } from 'config';
+import * as APICrawl from '~/api/crawl';
+import * as APIIndex from '~/api/index';
+import * as APIUser from '~/api/user';
+import Context from '~/components/Index/Context';
+import LayHeader from '~/components/Index/Header';
+import LaySidebar from '~/components/Index/Sidebar';
+import Title from '~/components/Index/Title';
+import { API_NAME, BILI, MESSAGE } from '~/config';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
-import { SetUser } from 'store/actions';
-import { asyncFunc } from 'utils/tools';
+import { SetUser } from '~/store/actions';
+import { asyncFunc } from '~/utils/tools';
 import './index.scss';
 
 const { Content } = Layout;

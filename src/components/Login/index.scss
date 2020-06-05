@@ -24,5 +24,17 @@
     label {
       color: #000;
     }
+
+    .captcha-wrap {
+      height: 32px;
+    }
+
+    .captcha-cell {
+      position: absolute;
+      right: 0.5px;
+      top: 0;
+      width: 82px;
+      height: 100%;
+    }
   }
 }

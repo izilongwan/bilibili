@@ -1,7 +1,7 @@
 import React from 'react'
-import LoginLogo from 'components/Login/Logo'
-import LoginForm from 'components/Login/Form'
-import 'components/Login/index.scss'
+import LoginLogo from '~/components/Login/Logo'
+import LoginForm from '~/components/Login/Form'
+import '~/components/Login/index.scss'
 
 const Login = () => {
   return (

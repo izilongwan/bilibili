@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Table } from 'antd';
-import Columns from 'components/Common/Columns'
-import Context from 'components/Index/Context'
+import Columns from '~/components/Common/Columns'
+import Context from '~/components/Index/Context'
 
 const Rookie = () => {
   const { onTableClick, data, loading, pagination, scroll } = useContext(Context);

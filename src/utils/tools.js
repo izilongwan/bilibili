@@ -1,3 +1,5 @@
+import md5 from 'js-md5'
+
 export const asyncFunc = async (fn) => {
   try {
     const { data } = await fn();
@@ -7,3 +9,6 @@ export const asyncFunc = async (fn) => {
     return [err, null];
   }
 }
+
+export const makeCrypto = (str) =>
+  md5.create().update(str).hex()

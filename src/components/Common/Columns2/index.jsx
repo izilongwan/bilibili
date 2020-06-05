@@ -1,5 +1,5 @@
 import { Tag } from 'antd';
-import { BILI } from 'config';
+import { BILI } from '~/config';
 import React from 'react';
 import ColumnSearchProps from '../ColumnSearchProps';
 import ColumnStatus from '../ColumnStatus';
@@ -27,7 +27,7 @@ const Columns = [
         rel="noopener noreferrer"
         target="_blank"
         className="bili-img-wrap">
-        <img src={ img || require('images/lazy.png') } alt="图片" title={ title } />
+        <img src={ img || require('~/assets/images/lazy.png') } alt="图片" title={ title } />
       </a>
     )
   },

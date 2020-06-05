@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Table } from 'antd';
-import Columns from 'components/Index/Crawler/Columns'
-import Context from 'components/Index/Context'
+import Columns from '~/components/Index/Crawler/Columns'
+import Context from '~/components/Index/Context'
 
 const Crawler = () => {
   const { loading, data, onTableClick } = useContext(Context);

@@ -1,3 +1,5 @@
+import { baseURL } from '~/config';
+
 export default {
   USER_LOGIN_ACTION: 'user/login_action',
   USER_CHECK_STATUS: 'user/check_status',
@@ -10,3 +12,5 @@ export default {
   CRAWL_DATA: 'crawler/crawl_data',
   AUTO_ASYNC_DATA: 'crawler/auto_async_data'
 }
+
+export const CAPTCHA = baseURL + '/user/random_img';
