@@ -36,10 +36,13 @@ const Columns = [
     align: 'center',
     width: 300,
     render: (value, { statusLoading, status, key, text }) => {
-      return key === 1 ? (
-        <AutoAsyncSwitch status={ status } loading={ statusLoading } />
-      ) : (
+      return key === 1
+        ? (
+          <AutoAsyncSwitch status={ status } loading={ statusLoading } />
+        )
+        : (
           <Button
+            className="state-btn"
             data-type="crawl"
             data-crawl={ value }
             loading={ statusLoading }

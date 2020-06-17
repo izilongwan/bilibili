@@ -12,6 +12,7 @@ const ESports = () => {
       columns={ Columns }
       onRow={ (data) => ({ onClick: (e) => onTableClick(e, data) }) }
       scroll={ scroll }
+      rowKey={ ({ key }) => key }
       pagination={ pagination }
       dataSource={ data }
     />

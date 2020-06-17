@@ -12,12 +12,14 @@ const Dropdown = () => {
   const { push } = useHistory();
 
   const hanldeLogout = async () => {
-    const [err, { code, msg }] = await asyncFunc(logout);
+    const [err, res] = await asyncFunc(logout);
 
     if (err) {
       message.error(SERVER_ERROR);
       return;
     }
+
+    const { code, msg } = res;
 
     if (code === 0) {
       push('/login');

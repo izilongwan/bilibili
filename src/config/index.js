@@ -3,7 +3,7 @@ const m = 60 * 1000,
 
 export const baseURL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:5011/api'
-  : 'http://bili.hlhs.store/api';
+  : 'http://bilibili.hlhs.store/api';
 
 export const SIDEBAR_MENU = [
   { text: '轮播图', path: '/carousel' },

@@ -11,7 +11,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 import { SetUser } from '~/store/actions';
-import { asyncFunc } from '~/utils/tools';
+import { asyncFunc, findParent } from '~/utils/tools';
 import './index.scss';
 
 const { Content } = Layout;
@@ -36,12 +36,14 @@ const Index = ({ children }) => {
   pathname === '/' && (pathname = '/carousel');
 
   const checkStatus = useCallback(async () => {
-    const [err, { code, data }] = await asyncFunc(APIUser.checkStatus);
+    const [err, res] = await asyncFunc(APIUser.checkStatus);
 
     if (err) {
       message.error(SERVER_ERROR);
       return;
     }
+
+    const { code, data } = res;
 
     code !== 0 ? push('/login') : dispatch(SetUser(data));
   }, [dispatch, push]);
@@ -62,7 +64,7 @@ const Index = ({ children }) => {
     setData([]);
     setLoading(true);
 
-    const [err, { code, msg, res }] = await asyncFunc(
+    const [err, res0] = await asyncFunc(
       () => APIIndex.getData({ apiName, page, num })
     );
 
@@ -71,6 +73,8 @@ const Index = ({ children }) => {
       setLoading(false);
       return;
     }
+
+    const { code, msg, res } = res0;
 
     if (code === 0) {
       const result = pathname === '/crawler'
@@ -133,7 +137,7 @@ const Index = ({ children }) => {
     item.statusLoading = true;
     setData([...data]);
 
-    const [err, { code, msg }] = await asyncFunc(
+    const [err, res] = await asyncFunc(
       () => APIIndex.updateDataStatus({
         apiName: UPDATE[pathname],
         status,
@@ -145,6 +149,8 @@ const Index = ({ children }) => {
       message.error(SERVER_ERROR);
       return;
     }
+
+    const { code, msg } = res;
 
     if (code === 0) {
       item.statusLoading = false;
@@ -163,12 +169,14 @@ const Index = ({ children }) => {
     item.statusLoading = true;
     setData([...data]);
 
-    const [err, { code, msg }] = await asyncFunc(func);
+    const [err, res] = await asyncFunc(func);
 
     if (err) {
       message.error(SERVER_ERROR);
       return;
     }
+
+    const { code, msg } = res;
 
     if (code === 0) {
       item.statusLoading = false;
@@ -207,9 +215,14 @@ const Index = ({ children }) => {
   }
 
   const onTableClick = (ev, record) => {
-    const e = ev || window.event;
-    const { target, srcElement } = e || e.srcElement;
-    let { type, status, crawl } = (target || srcElement).dataset;
+    const { target, srcElement } = ev || window.event;
+    const parent = findParent(target || srcElement, 'state-btn');
+
+    if (!parent) {
+      return;
+    }
+
+    let { type, status, crawl } = parent.dataset;
 
     switch (type) {
       case 'status':
@@ -235,7 +248,7 @@ const Index = ({ children }) => {
     item.tagsLoading = true;
     setData([...data]);
 
-    const [err, { code, msg }] = await asyncFunc(
+    const [err, res] = await asyncFunc(
       () => APIIndex.updateDataTags({ apiName, tags, id })
     );
 
@@ -243,6 +256,8 @@ const Index = ({ children }) => {
       message.error(SERVER_ERROR);
       return;
     }
+
+    const { code, msg } = res;
 
     if (code === 0) {
       item.tags = tags;
@@ -271,7 +286,7 @@ const Index = ({ children }) => {
     setLoading(true);
 
     const apiName = GET[pathname];
-    const [err, { code, msg, res }] = await asyncFunc(
+    const [err, result] = await asyncFunc(
       () => APIIndex.searchData({ apiName, kw })
     )
 
@@ -280,6 +295,8 @@ const Index = ({ children }) => {
       setLoading(false);
       return;
     }
+
+    const { code, res, msg } = result;
 
     if (code === 0) {
       setData(res.data);

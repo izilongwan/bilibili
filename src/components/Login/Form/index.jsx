@@ -86,7 +86,7 @@ const Login = () => {
   };
 
   const checkUserStatus = async () => {
-    const [err, { code }] = await asyncFunc(
+    const [err, res] = await asyncFunc(
       API.checkStatus
     );
 
@@ -95,6 +95,8 @@ const Login = () => {
       setLoading(false);
       return;
     }
+
+    const { code } = res;
 
     code === 0 && push('/');
   };
@@ -139,14 +141,14 @@ const Login = () => {
         />
       </Form.Item>
 
-      <Form.Item className="captcha-wrap" label="Captcha">
+      <Form.Item className="captcha-wrap" name="captcha" label="Captcha">
         <Form.Item
           rules={ rules.captcha }
           name="captcha">
           <Input
             initialValues="captcha"
             maxLength="4"
-            placeholder="Please input captcha"
+            placeholder="Input captcha"
           />
         </Form.Item>
 
@@ -163,9 +165,9 @@ const Login = () => {
       <Form.Item { ...tailLayout }>
         <Button
           icon={ <LoginOutlined /> }
-          type="primary"
           loading={ loading }
-          htmlType="submit">
+          htmlType="submit"
+          ghost>
           Login
         </Button>
       </Form.Item>

@@ -11,6 +11,7 @@ const Origin = () => {
       loading={ loading }
       columns={ Columns }
       onRow={ (data) => ({ onClick: (e) => onTableClick(e, data) }) }
+      rowKey={ ({ key }) => key }
       scroll={ scroll }
       pagination={ pagination }
       dataSource={ data }

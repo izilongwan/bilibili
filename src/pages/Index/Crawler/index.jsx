@@ -11,6 +11,7 @@ const Crawler = () => {
       loading={ loading }
       columns={ Columns }
       onRow={ (data) => ({ onClick: (e) => onTableClick(e, data) }) }
+      rowKey={ ({ key }) => key }
       dataSource={ data }
       pagination={ false }
     />

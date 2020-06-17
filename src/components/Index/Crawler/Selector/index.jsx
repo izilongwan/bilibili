@@ -9,15 +9,17 @@ const Selector = ({ duration, durationLoading }) => {
   const { onSelectAutoAsyncDuration } = useContext(Context);
 
   return (
-    <Select
-      loading={ durationLoading }
-      defaultValue={ duration }
-      style={ { width: 150 } }
-      onChange={ (value) => onSelectAutoAsyncDuration(value) }>
-      { DURATION.map(({ text, value }, idx) => (
-        <Option key={ idx } value={ value }>{ text }</Option>
-      )) }
-    </Select>
+    duration
+      ? (<Select
+        loading={ durationLoading }
+        defaultValue={ duration }
+        style={ { width: 150 } }
+        onChange={ (value) => onSelectAutoAsyncDuration(value) }>
+        { DURATION.map(({ text, value }, idx) => (
+          <Option key={ idx } value={ value }>{ text }</Option>
+        )) }
+      </Select>)
+      : ''
   );
 };
 
